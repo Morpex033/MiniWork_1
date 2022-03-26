@@ -10,10 +10,10 @@ public class Main {
         Random rand = new Random();
         Scanner scan = new Scanner(System.in);
         int K = scan.nextInt(), N = scan.nextInt();
-        int size = 200;
+        int size = 175;
 	    int[] array = new int[size];
         for (int i = 0; i < array.length; i++) {
-            array[i] = rand.nextInt(200) + 1;
+            array[i] = rand.nextInt(size) + 1;
         }
         Arrays.sort(array);
         System.out.println(Arrays.toString(array));
@@ -35,11 +35,11 @@ public class Main {
                     array[array.length-2] = array[array.length - 1];
                     array[array.length - 1] = a;
                 }
-                size1++;
             }
             if(size1 == size){
                 break;
             }
+            size1++;
         }
         return array;
     }
