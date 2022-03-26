@@ -23,25 +23,24 @@ public class Main {
 
     public static int[] ShuffleArray(int[] array, int K, int N, int size){
         int size1 = 0;
-        for (int i = 0; i < array.length / N; i++){
-            for (int j = 0; j < K; j++){
+        for (int i = 0; i < array.length / K; i++){
+            for (int j = 0; j < N; j++){
                 int a;
                 if (size1< array.length - 1) {
-                    a = array[size1];
-                    array[size1] = array[size1 + 1];
-                    array[size1 + 1] = a;
+                    a = array[size1 + 1];
+                    array[size1 + 1] = array[size1];
+                    array[size1] = a;
                 }else{
-                    a = array[array.length-1];
-                    array[array.length-1] = array[array.length - 2];
-                    array[array.length - 2] = a;
+                    a = array[array.length-2];
+                    array[array.length-2] = array[array.length - 1];
+                    array[array.length - 1] = a;
                 }
                 size1++;
             }
-            if(size1 == size - 1){
+            if(size1 == size){
                 break;
             }
         }
-        System.out.println(Arrays.toString(array));
         return array;
     }
 }
